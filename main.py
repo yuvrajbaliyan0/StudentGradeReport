@@ -7,9 +7,27 @@ studentreport["Tanya"]= {"english":90 , "maths":95, "science":85}
 studentreport["Gaytri"]= {"english":85 , "maths":60, "science":90}
 studentreport["Hitesh"]= {"english":40 , "maths":60, "science":80}
 
+def add_function():
+    print("ADD NEW STUDENT DETAILS----")
+    name = input("Enter Student Name :")
+
+    print("Subjects")
+    english = input("Enter English Marks : ")
+    maths = input("Enter Maths Marks : ")
+    science = input("Enter Science Marks : ")
+    studentreport[name]= {"english":english, "maths":maths, "science":science}
+
+#Delete Function
+def delete_function():
+    name = input("Enter Student Name :")
+    if name in studentreport:
+        studentreport.pop(name)
+    else: 
+        print("Student Not Exist")
+        
 #Update Student report
 def update_function():
-    print("UPDATE STUDENTS DETAILS----")
+    print("UPDATE EXISTING STUDENTS DETAILS----")
     name = input("Enter Student Name :")
     if name in studentreport:
         print("Subjects")
@@ -25,9 +43,9 @@ def show_function():
         print(f"{student}- English : {subjects['english']}, Maths : {subjects['maths']}, Science : {subjects['science']}")
 
 
-
+delete_function()
 #Update Students Grades...........................................................
-update_function()
+#update_function()
 
 #Show Students Grades.............................................................
 show_function()
